@@ -9,3 +9,5 @@ D:\DEV_C#\Komunikator\Komunikator\obj\Debug\Komunikator.csproj.CoreCompileInputs
 D:\DEV_C#\Komunikator\Komunikator\obj\Debug\Komunikator.exe
 D:\DEV_C#\Komunikator\Komunikator\obj\Debug\Komunikator.pdb
 D:\DEV_C#\Komunikator\Komunikator\obj\Debug\Komunikator.Form2.resources
+D:\DEV_C#\Komunikator\Komunikator\obj\Debug\Komunikator.Form3.resources
+D:\DEV_C#\Komunikator\Komunikator\obj\Debug\Komunikator.Form4.resources

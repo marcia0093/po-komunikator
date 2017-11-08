@@ -42,7 +42,6 @@
             this.SuspendLayout();
             // 
             // splitContainer1
-			// kontener kontrolek logout, new contact
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
@@ -64,7 +63,6 @@
             this.splitContainer1.TabIndex = 0;
             // 
             // button1
-			//new contact
             // 
             this.button1.Location = new System.Drawing.Point(12, 47);
             this.button1.Name = "button1";
@@ -74,7 +72,6 @@
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button4
-			// logout
             // 
             this.button4.Location = new System.Drawing.Point(390, 47);
             this.button4.Name = "button4";
@@ -84,7 +81,6 @@
             this.button4.UseVisualStyleBackColor = true;
             // 
             // listView1
-			//lista kontaktow
             // 
             this.listView1.Location = new System.Drawing.Point(12, 208);
             this.listView1.Name = "listView1";
@@ -101,7 +97,6 @@
             this.textBox1.TabIndex = 0;
             // 
             // button5
-			// wyslij wiadomosc
             // 
             this.button5.Location = new System.Drawing.Point(1284, 1153);
             this.button5.Name = "button5";
@@ -119,7 +114,6 @@
             this.textBox2.TabIndex = 2;
             // 
             // Form2
-			// main application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Komunikator
 {
-    public partial class Form1 : Form
+    public partial class Form4 : Form
     {
-        public Form1()
+        public Form4()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Form2 frm2 = new Form2();
-            frm2.ShowDialog();
         }
     }
 }
