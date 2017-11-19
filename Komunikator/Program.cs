@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Komunikator.Model.Client;
 
 namespace Komunikator
 {
@@ -16,7 +17,11 @@ namespace Komunikator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form3());
+
+            
+
+            Client client = new Client("127.0.0.1", 1234);
+            Application.Run(new Choose(client));
         }
     }
 }
