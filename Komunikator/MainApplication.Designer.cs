@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Znajomi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Znajomi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -60,23 +60,29 @@
             this.splitContainer1.Panel2.Controls.Add(this.textBox2);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.textBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(2415, 1251);
-            this.splitContainer1.SplitterDistance = 820;
+            this.splitContainer1.Size = new System.Drawing.Size(2448, 1226);
+            this.splitContainer1.SplitterDistance = 831;
             this.splitContainer1.TabIndex = 0;
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Znajomi});
-            listViewItem2.Tag = "Users";
+            listViewItem5.Tag = "Users";
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem5});
             this.listView1.Location = new System.Drawing.Point(12, 148);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(805, 1031);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Znajomi
+            // 
+            this.Znajomi.Tag = "";
+            this.Znajomi.Text = "Users";
+            this.Znajomi.Width = 790;
             // 
             // button4
             // 
@@ -122,20 +128,16 @@
             this.textBox1.Size = new System.Drawing.Size(1567, 256);
             this.textBox1.TabIndex = 0;
             // 
-            // Znajomi
-            // 
-            this.Znajomi.Tag = "";
-            this.Znajomi.Text = "Users";
-            this.Znajomi.Width = 790;
-            // 
             // MainApplication
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2415, 1251);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(2448, 1226);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainApplication";
-            this.Text = "Form2";
+            this.Text = "Communicator";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();

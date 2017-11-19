@@ -39,7 +39,7 @@
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.ForeColor = System.Drawing.Color.Indigo;
-            this.button1.Location = new System.Drawing.Point(336, 212);
+            this.button1.Location = new System.Drawing.Point(308, 277);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(508, 93);
             this.button1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // user_password
             // 
-            this.user_password.Location = new System.Drawing.Point(207, 144);
+            this.user_password.Location = new System.Drawing.Point(207, 190);
             this.user_password.Name = "user_password";
             this.user_password.Size = new System.Drawing.Size(775, 31);
             this.user_password.TabIndex = 2;
@@ -65,7 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 98);
+            this.label1.Location = new System.Drawing.Point(202, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 25);
             this.label1.TabIndex = 3;
@@ -74,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 150);
+            this.label2.Location = new System.Drawing.Point(202, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 25);
             this.label2.TabIndex = 4;
@@ -94,7 +94,7 @@
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Communicator - Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

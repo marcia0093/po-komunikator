@@ -51,9 +51,7 @@ namespace Communicator.Model.Client
                     if ((string)request.Data["login"] == "admin" && (string)request.Data["password"] == "admin") {
                         response = new Response(@"{
                             code: 0,
-                            data: {
-                                isValid: true
-                            },
+                            data: {},
                             errorMessage: '',
                             error: false
                         }",
@@ -61,12 +59,34 @@ namespace Communicator.Model.Client
                         );
                     } else {
                         response = new Response(@"{
+                            code: 2,
+                            data: {},
+                            errorMessage: 'Invalid login or password.',
+                            error: true
+                        }",
+                        request
+                        );
+                    }
+                    break;
+                case Request.RequestType.Register:
+                    if ((string)request.Data["login"] == "test" && (string)request.Data["password"] == "test")
+                    {
+                        response = new Response(@"{
                             code: 0,
-                            data: {
-                                isValid: false
-                            },
+                            data: {},
                             errorMessage: '',
                             error: false
+                        }",
+                        request
+                        );
+                    }
+                    else
+                    {
+                        response = new Response(@"{
+                            code: 3,
+                            data: {},
+                            errorMessage: 'This username is in use.',
+                            error: true
                         }",
                         request
                         );

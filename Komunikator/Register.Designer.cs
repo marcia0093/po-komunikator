@@ -30,7 +30,7 @@
         {
             this.register_login = new System.Windows.Forms.TextBox();
             this.register_password = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.registerButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -49,15 +49,15 @@
             this.register_password.Size = new System.Drawing.Size(501, 31);
             this.register_password.TabIndex = 2;
             // 
-            // button1
+            // registerButton
             // 
-            this.button1.Location = new System.Drawing.Point(533, 248);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(245, 88);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Zarejestruj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.registerButton.Location = new System.Drawing.Point(533, 248);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(245, 88);
+            this.registerButton.TabIndex = 3;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -84,11 +84,11 @@
             this.ClientSize = new System.Drawing.Size(1414, 858);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.registerButton);
             this.Controls.Add(this.register_password);
             this.Controls.Add(this.register_login);
             this.Name = "Register";
-            this.Text = "Form4";
+            this.Text = "Communicator - Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,7 +98,7 @@
 
         private System.Windows.Forms.TextBox register_login;
         private System.Windows.Forms.TextBox register_password;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
     }

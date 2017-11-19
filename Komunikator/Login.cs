@@ -34,14 +34,14 @@ namespace Communicator
             // Dictionary<string, object> responseData = loginResponse.Data; Odkomentowac po zmianie JToken na Dictionary w klasie Client
             var responseData = loginResponse.Data;
 
-            if ((bool) responseData["isValid"] == true)
+            if (loginResponse.Error != true)
             {
                 MainApplication frm2 = new MainApplication(Client);
                 frm2.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Niepoprawny login i/lub hasło!");
+                MessageBox.Show(loginResponse.ErrorMessage);
                 user_password.ResetText();
                 user_login.ResetText();
             }
