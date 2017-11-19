@@ -1,4 +1,4 @@
-﻿namespace Komunikator
+﻿namespace Communicator
 {
     partial class Choose
     {
@@ -50,7 +50,7 @@
             this.SignUp.TabIndex = 1;
             this.SignUp.Text = "Zarejestruj";
             this.SignUp.UseVisualStyleBackColor = true;
-            this.SignUp.Click += new System.EventHandler(this.button2_Click);
+            this.SignUp.Click += new System.EventHandler(this.signUp_Click);
             // 
             // Choose
             // 

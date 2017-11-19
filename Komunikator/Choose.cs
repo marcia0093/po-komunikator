@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Komunikator.Model.Client;
+using Communicator.Model.Client;
 
-namespace Komunikator
+namespace Communicator
 {
     public partial class Choose : Form
     {
@@ -27,9 +27,9 @@ namespace Komunikator
             frm1.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void signUp_Click(object sender, EventArgs e)
         {
-            Register frm4 = new Register();
+            Register frm4 = new Register(Client);
             frm4.ShowDialog();
         }
     }

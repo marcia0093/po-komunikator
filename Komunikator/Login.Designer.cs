@@ -1,4 +1,4 @@
-﻿namespace Komunikator
+﻿namespace Communicator
 {
     partial class Login
     {

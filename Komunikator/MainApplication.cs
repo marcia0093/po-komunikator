@@ -7,31 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Communicator.Model.Client;
 
-namespace Komunikator
+namespace Communicator
 {
     public partial class MainApplication : Form
     {
-        Komunikator.Entities.User user;
+        public Client Client { get; private set; }
 
-        public MainApplication(string login, string pass)
+        public MainApplication(Client client)
         {
+            Client = client;
             InitializeComponent();
-            user = new Komunikator.Entities.User(Komunikator.Properties.Request.getUserIdByName(login), login, pass);
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Komunikator.Entities.Message message = new Komunikator.Entities.Message(user);
-            message.setContent(textBox1.Text);
-
             textBox2.Text = "From me:";
-            textBox2.Text = textBox2.Text + message.getContent();
+            textBox2.Text = textBox2.Text + textBox1.Text;
             textBox2.Text = textBox2.Text + "Sending";
             textBox1.ResetText();
         }

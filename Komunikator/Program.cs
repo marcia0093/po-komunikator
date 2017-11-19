@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Komunikator.Model.Client;
+using Communicator.Model.Client;
 
-namespace Komunikator
+namespace Communicator
 {
     static class Program
     {

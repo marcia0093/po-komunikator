@@ -7,22 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Communicator.Model.Client;
 
-namespace Komunikator
+namespace Communicator
 {
     public partial class Register : Form
     {
-        public Register()
+        public Client Client { get; private set; }
+
+        public Register(Client client)
         {
+            Client = client;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Komunikator.Properties.Request.register(register_login.Text, email.Text, register_password.Text))
+            if (true)
             {
                 MessageBox.Show("Rejestracja zakończona powodzeniem. Zaloguj się.");
-                Login frm1 = new Login();
+                Login frm1 = new Login(Client);
                 frm1.ShowDialog();
             }
             else {

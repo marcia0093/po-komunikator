@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.IO;
 
-namespace Komunikator.Model.Client
+namespace Communicator.Model.Client
 {
     public class Client
     {
@@ -48,27 +48,37 @@ namespace Komunikator.Model.Client
             switch (request.Type)
             {
                 case Request.RequestType.Login:
-                    //TODO: Przykladowa walidacja
-                    response = new Response(
-                        "{" +
-                            "\"code\": \"0\"" +
-                            "\"data\": {" +
-                                "\"isValid\": \"true\"" +
-                            "}" +
-                            "\"errorMessage\": \"\"" +
-                            "\"error\": \"false\"" +
-                        "}",
+                    if ((string)request.Data["login"] == "admin" && (string)request.Data["password"] == "admin") {
+                        response = new Response(@"{
+                            code: 0,
+                            data: {
+                                isValid: true
+                            },
+                            errorMessage: '',
+                            error: false
+                        }",
                         request
                         );
+                    } else {
+                        response = new Response(@"{
+                            code: 0,
+                            data: {
+                                isValid: false
+                            },
+                            errorMessage: '',
+                            error: false
+                        }",
+                        request
+                        );
+                    }
                     break;
                 default:
-                    response = new Response(
-                        "{" +
-                            "\"code\": \"1\"" +
-                            "\"data\": {}" +
-                            "\"errorMessage\": \"Invalid request type.\"" +
-                            "\"error\": \"true\"" +
-                        "}",
+                    response = new Response(@"{
+                            code: 1,
+                            data: {},
+                            errorMessage: 'Invalid request type.',
+                            error: true,
+                        }",
                         request
                         );
                     break;

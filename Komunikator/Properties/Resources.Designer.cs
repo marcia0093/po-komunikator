@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Komunikator.Properties
+namespace Communicator.Properties
 {
 
 

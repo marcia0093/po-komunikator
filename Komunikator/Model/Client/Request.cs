@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace Komunikator.Model.Client
+namespace Communicator.Model.Client
 {
     public class Request
     {

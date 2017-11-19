@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Komunikator.Model.Client;
+using Communicator.Model.Client;
 
-namespace Komunikator
+namespace Communicator
 {
     public partial class Login : Form
     {
@@ -31,11 +31,12 @@ namespace Komunikator
             Request loginRequest = new Request(Request.RequestType.Login, loginData);
             Response loginResponse = Client.SendRequest(loginRequest);
 
-            Dictionary<string, object> responseData = loginResponse.Data;
-           
+            // Dictionary<string, object> responseData = loginResponse.Data; Odkomentowac po zmianie JToken na Dictionary w klasie Client
+            var responseData = loginResponse.Data;
+
             if ((bool) responseData["isValid"] == true)
             {
-                MainApplication frm2 = new MainApplication(user_login.Text, user_password.Text);
+                MainApplication frm2 = new MainApplication(Client);
                 frm2.ShowDialog();
             }
             else
