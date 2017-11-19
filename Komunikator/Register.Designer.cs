@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.register_login = new System.Windows.Forms.TextBox();
-            this.email = new System.Windows.Forms.TextBox();
             this.register_password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,23 +42,16 @@
             this.register_login.Size = new System.Drawing.Size(502, 31);
             this.register_login.TabIndex = 0;
             // 
-            // email
-            // 
-            this.email.Location = new System.Drawing.Point(411, 194);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(500, 31);
-            this.email.TabIndex = 1;
-            // 
             // register_password
             // 
-            this.register_password.Location = new System.Drawing.Point(412, 255);
+            this.register_password.Location = new System.Drawing.Point(411, 191);
             this.register_password.Name = "register_password";
             this.register_password.Size = new System.Drawing.Size(501, 31);
             this.register_password.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(542, 327);
+            this.button1.Location = new System.Drawing.Point(533, 248);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(245, 88);
             this.button1.TabIndex = 3;
@@ -77,19 +68,10 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Login";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "EMail";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 261);
+            this.label3.Location = new System.Drawing.Point(298, 197);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 25);
             this.label3.TabIndex = 6;
@@ -101,11 +83,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1414, 858);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.register_password);
-            this.Controls.Add(this.email);
             this.Controls.Add(this.register_login);
             this.Name = "Register";
             this.Text = "Form4";
@@ -117,11 +97,9 @@
         #endregion
 
         private System.Windows.Forms.TextBox register_login;
-        private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.TextBox register_password;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
     }
 }
