@@ -36,6 +36,7 @@ namespace Communicator
 
             if (loginResponse.Error != true)
             {
+                this.Hide();
                 MainApplication frm2 = new MainApplication(Client);
                 frm2.ShowDialog();
             }
@@ -48,9 +49,9 @@ namespace Communicator
             
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void CloseForm(object sender, FormClosedEventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

@@ -75,6 +75,7 @@
             this.Controls.Add(this.Login);
             this.Name = "Choose";
             this.Text = "Communicator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseForm);
             this.ResumeLayout(false);
             this.PerformLayout();
 

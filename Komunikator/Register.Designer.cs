@@ -116,6 +116,7 @@
             this.Controls.Add(this.register_login);
             this.Name = "Register";
             this.Text = "Communicator - Register";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseForm);
             this.ResumeLayout(false);
             this.PerformLayout();
 

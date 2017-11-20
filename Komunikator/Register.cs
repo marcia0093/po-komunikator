@@ -36,6 +36,7 @@ namespace Communicator
             if (registerResponse.Error != true)
             {
                 MessageBox.Show("Rejestracja zakończona powodzeniem. Zaloguj się.");
+                this.Hide();
                 Login frm1 = new Login(Client);
                 frm1.ShowDialog();
             }
@@ -44,6 +45,11 @@ namespace Communicator
                 register_login.ResetText();
                 register_password.ResetText();
             }
+        }
+
+        private void CloseForm(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

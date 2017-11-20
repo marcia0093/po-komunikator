@@ -63,7 +63,6 @@
             this.user_password.Name = "user_password";
             this.user_password.Size = new System.Drawing.Size(654, 80);
             this.user_password.TabIndex = 2;
-            this.user_password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -100,6 +99,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Login";
             this.Text = "Communicator - Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseForm);
             this.ResumeLayout(false);
             this.PerformLayout();
 

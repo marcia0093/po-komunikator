@@ -23,14 +23,22 @@ namespace Communicator
 
         private void login_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Login frm1 = new Login(Client);
             frm1.ShowDialog();
         }
 
         private void signUp_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Register frm4 = new Register(Client);
             frm4.ShowDialog();
+        }
+
+        private void CloseForm(object sender, FormClosedEventArgs e)
+        {
+            MessageBox.Show("Application will be close");
+            Application.Exit();
         }
     }
 }

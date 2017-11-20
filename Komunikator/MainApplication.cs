@@ -28,5 +28,10 @@ namespace Communicator
             textBox2.Text = textBox2.Text + "Sending";
             textBox1.ResetText();
         }
+
+        private void CloseForm(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
