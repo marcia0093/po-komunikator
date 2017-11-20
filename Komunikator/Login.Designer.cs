@@ -38,8 +38,9 @@
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.ForeColor = System.Drawing.Color.Indigo;
-            this.button1.Location = new System.Drawing.Point(308, 277);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(113, 432);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(508, 93);
             this.button1.TabIndex = 0;
@@ -49,34 +50,38 @@
             // 
             // user_login
             // 
-            this.user_login.Location = new System.Drawing.Point(207, 92);
+            this.user_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.user_login.Location = new System.Drawing.Point(38, 104);
             this.user_login.Name = "user_login";
-            this.user_login.Size = new System.Drawing.Size(775, 31);
+            this.user_login.Size = new System.Drawing.Size(654, 80);
             this.user_login.TabIndex = 1;
             // 
             // user_password
             // 
-            this.user_password.Location = new System.Drawing.Point(207, 190);
+            this.user_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.user_password.Location = new System.Drawing.Point(38, 294);
             this.user_password.Name = "user_password";
-            this.user_password.Size = new System.Drawing.Size(775, 31);
+            this.user_password.Size = new System.Drawing.Size(654, 80);
             this.user_password.TabIndex = 2;
             this.user_password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(202, 47);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(27, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 25);
+            this.label1.Size = new System.Drawing.Size(139, 61);
             this.label1.TabIndex = 3;
             this.label1.Text = "User";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 149);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(27, 214);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 25);
+            this.label2.Size = new System.Drawing.Size(259, 61);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
@@ -86,7 +91,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1136, 421);
+            this.ClientSize = new System.Drawing.Size(723, 597);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.user_password);
