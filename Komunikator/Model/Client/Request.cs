@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Communicator.Model.Client
 {
@@ -26,7 +28,13 @@ namespace Communicator.Model.Client
             get
             {
                 //TODO: stworzyć requestString (json) z pól w klasie Request (type i data)
+                //ISITDONE? 
                 string requestString = "";
+
+                JToken serializeData = JsonConvert.SerializeObject(Type);
+                JToken serializeRequest = JsonConvert.SerializeObject(this);
+                requestString = (string)serializeRequest;
+
                 return requestString;
             }
 
