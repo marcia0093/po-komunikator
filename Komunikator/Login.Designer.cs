@@ -61,8 +61,10 @@
             this.user_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.user_password.Location = new System.Drawing.Point(38, 294);
             this.user_password.Name = "user_password";
+            this.user_password.PasswordChar = '*';
             this.user_password.Size = new System.Drawing.Size(654, 80);
             this.user_password.TabIndex = 2;
+            this.user_password.UseSystemPasswordChar = true;
             // 
             // label1
             // 
