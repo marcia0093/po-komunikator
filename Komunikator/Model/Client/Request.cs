@@ -10,7 +10,7 @@ namespace Communicator.Model.Client
     public class Request
     {
         //TODO: Rozszerzyc RequestType w trakcie powstawania funkcjonalności
-        public enum RequestType { Login, Register, SendMessage }
+        public enum RequestType { Login, Register, SendMessage, GetMessage }
 
         public RequestType Type { get; private set; }
         public Dictionary<string, object> Data { get; private set; }

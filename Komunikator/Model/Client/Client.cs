@@ -2,6 +2,8 @@
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Communicator.Model.Client
 {
@@ -94,6 +96,22 @@ namespace Communicator.Model.Client
                     break;
 
                 case Request.RequestType.SendMessage:
+                    response = new Response(@"{
+                        code: 0,
+                        data: {},
+                        errorMessage: '',
+                        error: false
+                    }",
+                    request
+                    );
+                    break;
+                case Request.RequestType.GetMessage:
+                    //TODO: SPRAWDZIC JAK ZAKODOWAĆ JToken w JToken ;/
+                    //@SAJMON I STACK HERE
+                    //string objectData = @"{
+                    //    message = 'message'
+                    //}";
+                    //string data = JsonConvert.SerializeObject(objectData);
                     response = new Response(@"{
                         code: 0,
                         data: {},

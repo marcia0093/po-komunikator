@@ -60,8 +60,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.textBox2);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.textBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(2448, 1226);
-            this.splitContainer1.SplitterDistance = 831;
+            this.splitContainer1.Size = new System.Drawing.Size(2464, 1065);
+            this.splitContainer1.SplitterDistance = 836;
             this.splitContainer1.TabIndex = 0;
             // 
             // listView1
@@ -71,9 +71,9 @@
             listViewItem1.Tag = "Users";
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(12, 148);
+            this.listView1.Location = new System.Drawing.Point(12, 116);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(805, 1031);
+            this.listView1.Size = new System.Drawing.Size(805, 881);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -86,7 +86,8 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(390, 47);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.Location = new System.Drawing.Point(389, 15);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(428, 95);
             this.button4.TabIndex = 3;
@@ -95,7 +96,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 47);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(12, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(372, 95);
             this.button1.TabIndex = 0;
@@ -108,14 +110,15 @@
             this.textBox2.Location = new System.Drawing.Point(12, 47);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1567, 838);
+            this.textBox2.Size = new System.Drawing.Size(1300, 600);
             this.textBox2.TabIndex = 2;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1284, 1153);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button5.Location = new System.Drawing.Point(739, 915);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(295, 66);
+            this.button5.Size = new System.Drawing.Size(573, 92);
             this.button5.TabIndex = 1;
             this.button5.Text = "Send message";
             this.button5.UseVisualStyleBackColor = true;
@@ -123,10 +126,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 891);
+            this.textBox1.Location = new System.Drawing.Point(12, 653);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1567, 256);
+            this.textBox1.Size = new System.Drawing.Size(1300, 256);
             this.textBox1.TabIndex = 0;
             // 
             // MainApplication
@@ -134,10 +137,10 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(2448, 1226);
+            this.ClientSize = new System.Drawing.Size(2464, 1065);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainApplication";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Communicator";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseForm);
             this.splitContainer1.Panel1.ResumeLayout(false);

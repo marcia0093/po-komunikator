@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Communicator.Model.Client;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Communicator
 {
@@ -40,6 +42,20 @@ namespace Communicator
                 textBox2.Text = textBox2.Text + textBox1.Text;
                 textBox2.Text = textBox2.Text + "Sending";
                 textBox1.ResetText();
+
+                Dictionary<string, object> receiveMessageData = new Dictionary<string, object>();
+                receiveMessageData.Add("ChatId", 2);
+
+                Request getMessageRequest = new Request(Request.RequestType.GetMessage, receiveMessageData);
+                Response getMessageResponse = Client.SendRequest(getMessageRequest);
+
+                if (getMessageResponse.Error != true) {
+                    //JToken data = JsonConvert.DeserializeObject<JObject>(getMessageResponse.Data);
+                    textBox2.Text = textBox2.Text + "From responder:";
+                    textBox2.Text = textBox2.Text + "MESSAGE";
+                    textBox2.Text = textBox2.Text + "Received";
+                }
+
             }
         }
 
