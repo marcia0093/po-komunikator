@@ -23,27 +23,36 @@ namespace Communicator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dictionary<string, object> registerData = new Dictionary<string, object>();
-            registerData.Add("login", register_login.Text);
-            registerData.Add("password", register_password.Text);
+            if (Password.Text == RepeatPassword.Text) {
 
-            Request registerRequest = new Request(Request.RequestType.Register, registerData);
-            Response registerResponse = Client.SendRequest(registerRequest);
+                Dictionary<string, object> registerData = new Dictionary<string, object>();
+                registerData.Add("login", Login.Text);
+                registerData.Add("password", Password.Text);
 
-            // Dictionary<string, object> responseData = loginResponse.Data; Odkomentowac po zmianie JToken na Dictionary w klasie Client
-            var responseData = registerResponse.Data;
+                Request registerRequest = new Request(Request.RequestType.Register, registerData);
+                Response registerResponse = Client.SendRequest(registerRequest);
 
-            if (registerResponse.Error != true)
-            {
-                MessageBox.Show("Rejestracja zakończona powodzeniem. Zaloguj się.");
-                this.Hide();
-                Login frm1 = new Login(Client);
-                frm1.ShowDialog();
+                // Dictionary<string, object> responseData = loginResponse.Data; Odkomentowac po zmianie JToken na Dictionary w klasie Client
+                var responseData = registerResponse.Data;
+
+                if (registerResponse.Error != true)
+                {
+                    MessageBox.Show("Register ok. Log in.");
+                    this.Hide();
+                    Login frm1 = new Login(Client);
+                    frm1.ShowDialog();
+                }
+                else {
+                    MessageBox.Show(registerResponse.ErrorMessage);
+                    Login.ResetText();
+                    Password.ResetText();
+                    RepeatPassword.ResetText();
+                }
             }
             else {
-                MessageBox.Show(registerResponse.ErrorMessage);
-                register_login.ResetText();
-                register_password.ResetText();
+                MessageBox.Show("Password aren't equal. Try again.");
+                Password.ResetText();
+                RepeatPassword.ResetText();
             }
         }
 
