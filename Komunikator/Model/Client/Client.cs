@@ -92,6 +92,17 @@ namespace Communicator.Model.Client
                         );
                     }
                     break;
+
+                case Request.RequestType.SendMessage:
+                    response = new Response(@"{
+                        code: 0,
+                        data: {},
+                        errorMessage: '',
+                        error: false
+                    }",
+                    request
+                    );
+                    break;
                 default:
                     response = new Response(@"{
                             code: 1,
