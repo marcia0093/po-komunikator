@@ -35,7 +35,7 @@ namespace Communicator
             frm4.ShowDialog();
         }
 
-        private void CloseForm(object sender, FormClosedEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Application will be close");
             Application.Exit();

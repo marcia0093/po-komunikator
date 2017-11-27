@@ -63,5 +63,14 @@ namespace Communicator
         {
             Application.Exit();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //@SAJMON czy na logout też wysyłam ci request?
+            MessageBox.Show("Logout.");
+            this.Hide();
+            Choose frm1 = new Choose(Client);
+            frm1.ShowDialog();
+        }
     }
 }
