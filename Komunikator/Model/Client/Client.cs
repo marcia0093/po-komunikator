@@ -14,6 +14,7 @@ namespace Communicator.Model.Client
         private TcpClient TcpClient;
         private StreamReader Reader;
         private StreamWriter Writer;
+        public bool IsConnect { get; private set; }
 
         public Client(string ip, int port) {
             Ip = ip;
@@ -22,7 +23,15 @@ namespace Communicator.Model.Client
 
         public void Connect() {
             TcpClient = new TcpClient();
-            TcpClient.Connect(Ip, Port);
+            try
+            {
+                TcpClient.Connect(Ip, Port);
+                IsConnect = true;
+            }
+            catch (Exception e) {
+                IsConnect = false;
+                return;
+            }
             Reader = new StreamReader(TcpClient.GetStream());
             Writer = new StreamWriter(TcpClient.GetStream());
 
@@ -30,96 +39,190 @@ namespace Communicator.Model.Client
 
         public void Close() {
             TcpClient.Close(); 
-            TcpClient = null; //TODO: Sprawdzić czy tak powinno się robić
+            TcpClient = null;
         }
 
         public Response SendRequest(Request request)
         {
-            /*
-            Writer.WriteLine(request.RequestString);
-
-            return new Response(
-                Reader.ReadLine(),
-                request
-            );
-            */
-
             Response response = null;
 
-
-            switch (request.Type)
+            switch (request.Code)
             {
                 case Request.RequestType.Login:
-                    if ((string)request.Data["login"] == "admin" && (string)request.Data["password"] == "admin") {
-                        response = new Response(@"{
-                            code: 0,
+                    {
+                        
+                        string loginRequest = JsonConvert.SerializeObject(request.Data);
+                        Writer.WriteLine(loginRequest);
+                        Writer.Flush();
+                        string responseString = Reader.ReadLine();
+                        if (responseString != null)
+                        {
+                            object dataReceived = JsonConvert.DeserializeObject(responseString);
+                            response = new Response(responseString, request);
+                        }
+                        else {
+                            response = new Response(@"{
+                            code: 1,
                             data: {},
-                            errorMessage: '',
-                            error: false
+                            errorMessage: 'Response is null.',
+                            error: true,
                         }",
                         request
                         );
-                    } else {
-                        response = new Response(@"{
-                            code: 2,
-                            data: {},
-                            errorMessage: 'Invalid login or password.',
-                            error: true
-                        }",
-                        request
-                        );
+                        }
                     }
                     break;
-                case Request.RequestType.Register:
-                    if ((string)request.Data["login"] == "test" && (string)request.Data["password"] == "test")
+               
+            case Request.RequestType.Register:
                     {
-                        response = new Response(@"{
-                            code: 0,
+
+                        string registerRequest = JsonConvert.SerializeObject(request.Data);
+                        Writer.WriteLine(registerRequest);
+                        Writer.Flush();
+                        string responseString = Reader.ReadLine();
+                        if (responseString != null)
+                        {
+                            object dataReceived = JsonConvert.DeserializeObject(responseString);
+                            response = new Response(responseString, request);
+                        }
+                        else
+                        {
+                            response = new Response(@"{
+                            code: 1,
                             data: {},
-                            errorMessage: '',
-                            error: false
+                            errorMessage: 'Response is null.',
+                            error: true,
                         }",
                         request
                         );
+                        }
                     }
-                    else
+                    break;
+            case Request.RequestType.NewChat:
                     {
-                        response = new Response(@"{
-                            code: 3,
+
+                        string registerRequest = JsonConvert.SerializeObject(request.Data);
+                        Writer.WriteLine(registerRequest);
+                        Writer.Flush();
+                        string responseString = Reader.ReadLine();
+                        if (responseString != null)
+                        {
+                            object dataReceived = JsonConvert.DeserializeObject(responseString);
+                            response = new Response(responseString, request);
+                        }
+                        else
+                        {
+                            response = new Response(@"{
+                            code: 1,
                             data: {},
-                            errorMessage: 'This username is in use.',
-                            error: true
+                            errorMessage: 'Response is null.',
+                            error: true,
                         }",
                         request
                         );
+                        }
+                    }
+                    break;
+                case Request.RequestType.GetChats:
+                    {
+
+                        string getChatsRequest = JsonConvert.SerializeObject(request.Data);
+                        Writer.WriteLine(getChatsRequest);
+                        Writer.Flush();
+                        string responseString = Reader.ReadLine();
+                        if (responseString != null)
+                        {
+                            object dataReceived = JsonConvert.DeserializeObject(responseString);
+                            response = new Response(responseString, request);
+                        }
+                        else
+                        {
+                            response = new Response(@"{
+                            code: 1,
+                            data: {},
+                            errorMessage: 'Response is null.',
+                            error: true,
+                        }",
+                        request
+                        );
+                        }
                     }
                     break;
 
                 case Request.RequestType.SendMessage:
-                    response = new Response(@"{
-                        code: 0,
-                        data: {},
-                        errorMessage: '',
-                        error: false
-                    }",
-                    request
-                    );
+                    {
+
+                        string sendMessRequest = JsonConvert.SerializeObject(request.Data);
+                        Writer.WriteLine(sendMessRequest);
+                        Writer.Flush();
+                        string responseString = Reader.ReadLine();
+                        if (responseString != null)
+                        {
+                            object dataReceived = JsonConvert.DeserializeObject(responseString);
+                            response = new Response(responseString, request);
+                        }
+                        else
+                        {
+                            response = new Response(@"{
+                            code: 1,
+                            data: {},
+                            errorMessage: 'Response is null.',
+                            error: true,
+                        }",
+                        request
+                        );
+                        }
+                    }
                     break;
-                case Request.RequestType.GetMessage:
-                    //TODO: SPRAWDZIC JAK ZAKODOWAĆ JToken w JToken ;/
-                    //@SAJMON I STACK HERE
-                    //string objectData = @"{
-                    //    message = 'message'
-                    //}";
-                    //string data = JsonConvert.SerializeObject(objectData);
-                    response = new Response(@"{
-                        code: 0,
-                        data: {},
-                        errorMessage: '',
-                        error: false
-                    }",
-                    request
-                    );
+                case Request.RequestType.GetNewMessage:
+                    {
+
+                        string getNewMessRequest = JsonConvert.SerializeObject(request.Data);
+                        Writer.WriteLine(getNewMessRequest);
+                        Writer.Flush();
+                        string responseString = Reader.ReadLine();
+                        if (responseString != null)
+                        {
+                            object dataReceived = JsonConvert.DeserializeObject(responseString);
+                            response = new Response(responseString, request);
+                        }
+                        else
+                        {
+                            response = new Response(@"{
+                            code: 1,
+                            data: {},
+                            errorMessage: 'Response is null.',
+                            error: true,
+                        }",
+                        request
+                        );
+                        }
+                    }
+                    break;
+                case Request.RequestType.Logout:
+                    {
+
+                        string logoutRequest = JsonConvert.SerializeObject(request.Data);
+                        Writer.WriteLine(logoutRequest);
+                        Writer.Flush();
+                        string responseString = Reader.ReadLine();
+                        if (responseString != null)
+                        {
+                            object dataReceived = JsonConvert.DeserializeObject(responseString);
+                            response = new Response(responseString, request);
+                        }
+                        else
+                        {
+                            response = new Response(@"{
+                            code: 1,
+                            data: {},
+                            errorMessage: 'Response is null.',
+                            error: true,
+                        }",
+                        request
+                        );
+                        }
+                    }
                     break;
                 default:
                     response = new Response(@"{
@@ -132,8 +235,8 @@ namespace Communicator.Model.Client
                         );
                     break;
             }
-
-            return response;
+            
+                return response;
         }
 
 

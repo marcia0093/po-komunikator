@@ -20,7 +20,8 @@ namespace Communicator
 
             
 
-            Client client = new Client("127.0.0.1", 1234);
+            Client client = new Client("127.0.0.1", 12345);
+            client.Connect();
             Application.Run(new Choose(client));
         }
     }

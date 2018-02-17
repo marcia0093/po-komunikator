@@ -19,6 +19,12 @@ namespace Communicator
         {
             Client = client;
             InitializeComponent();
+            if (Client.IsConnect != true)
+            {
+                MessageBox.Show("Can't connect to serwer. Rebbot aplication or contact with admin.");
+                Login.Enabled = false;
+                SignUp.Enabled = false;
+            }
         }
 
         private void login_Click(object sender, EventArgs e)
@@ -38,7 +44,18 @@ namespace Communicator
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Application will be close");
+            closeAll();
+        }
+
+        private void closeAll() {    
+            Client.Close();
             Application.Exit();
+        }
+
+        private void CloseForm(object sender, FormClosedEventArgs e)
+        {
+            MessageBox.Show("Application will be close");
+            closeAll();
         }
     }
 }

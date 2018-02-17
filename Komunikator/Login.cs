@@ -25,13 +25,13 @@ namespace Communicator
         private void button1_Click_1(object sender, EventArgs e)
         {
             Dictionary<string, object> loginData = new Dictionary<string, object>();
+            loginData.Add("action", "login");
             loginData.Add("login", user_login.Text);
             loginData.Add("password", user_password.Text);
-
+            
             Request loginRequest = new Request(Request.RequestType.Login, loginData);
             Response loginResponse = Client.SendRequest(loginRequest);
 
-            // Dictionary<string, object> responseData = loginResponse.Data; Odkomentowac po zmianie JToken na Dictionary w klasie Client
             var responseData = loginResponse.Data;
 
             if (loginResponse.Error != true)
@@ -43,6 +43,9 @@ namespace Communicator
             else
             {
                 MessageBox.Show(loginResponse.ErrorMessage);
+                this.Hide();
+                Login frm1 = new Login(Client);
+                frm1.ShowDialog();
                 user_password.ResetText();
                 user_login.ResetText();
             }

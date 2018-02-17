@@ -26,14 +26,13 @@ namespace Communicator
             if (Password.Text == RepeatPassword.Text) {
 
                 Dictionary<string, object> registerData = new Dictionary<string, object>();
+                registerData.Add("action", "register");
                 registerData.Add("login", Login.Text);
                 registerData.Add("password", Password.Text);
+                registerData.Add("password2", RepeatPassword.Text);
 
                 Request registerRequest = new Request(Request.RequestType.Register, registerData);
                 Response registerResponse = Client.SendRequest(registerRequest);
-
-                // Dictionary<string, object> responseData = loginResponse.Data; Odkomentowac po zmianie JToken na Dictionary w klasie Client
-                var responseData = registerResponse.Data;
 
                 if (registerResponse.Error != true)
                 {

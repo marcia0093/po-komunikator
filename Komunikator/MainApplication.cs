@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Communicator.Model.Client;
+using Komunikator;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -21,42 +22,19 @@ namespace Communicator
         {
             Client = client;
             InitializeComponent();
+            GetMessages();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        public void GetMessages()
         {
-            //textBox2.Text = "From me:";
-            //textBox2.Text = textBox2.Text + textBox1.Text;
-            //textBox2.Text = textBox2.Text + "Sending";
-            //textBox1.ResetText();
+            Dictionary<string, object> getChatsData = new Dictionary<string, object>();
+            getChatsData.Add("action", "get-chats");
 
-            Dictionary<string, object> messageData = new Dictionary<string, object>();
-            messageData.Add("message", textBox2.Text);
+            Request getChatsRequest = new Request(Request.RequestType.GetChats, getChatsData);
+            Response getChatsResponse = Client.SendRequest(getChatsRequest);
 
-            Request sendMessageRequest = new Request(Request.RequestType.SendMessage, messageData);
-            Response sendMessageResponse = Client.SendRequest(sendMessageRequest);
-
-            if (sendMessageResponse.Error != true)
-            {
-                textBox2.Text = "From me:";
-                textBox2.Text = textBox2.Text + textBox1.Text;
-                textBox2.Text = textBox2.Text + "Sending";
-                textBox1.ResetText();
-
-                Dictionary<string, object> receiveMessageData = new Dictionary<string, object>();
-                receiveMessageData.Add("ChatId", 2);
-
-                Request getMessageRequest = new Request(Request.RequestType.GetMessage, receiveMessageData);
-                Response getMessageResponse = Client.SendRequest(getMessageRequest);
-
-                if (getMessageResponse.Error != true) {
-                    //JToken data = JsonConvert.DeserializeObject<JObject>(getMessageResponse.Data);
-                    textBox2.Text = textBox2.Text + "From responder:";
-                    textBox2.Text = textBox2.Text + "MESSAGE";
-                    textBox2.Text = textBox2.Text + "Received";
-                }
-
-            }
+            string chats = JsonConvert.SerializeObject(getChatsResponse.Data["Data"]);
+            textBox2.Text = chats;
         }
 
         private void CloseForm(object sender, FormClosedEventArgs e)
@@ -66,11 +44,73 @@ namespace Communicator
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //@SAJMON czy na logout też wysyłam ci request?
-            MessageBox.Show("Logout.");
-            this.Hide();
-            Choose frm1 = new Choose(Client);
+            Dictionary<string, object> logoutData = new Dictionary<string, object>();
+            logoutData.Add("action", "logout");
+
+            Request logoutRequest = new Request(Request.RequestType.Logout, logoutData);
+            Response logoutResponse = Client.SendRequest(logoutRequest);
+
+            if (logoutResponse.Error != true)
+            {
+                MessageBox.Show("Logout.");
+                this.Hide();
+                Choose frm1 = new Choose(Client);
+                frm1.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(logoutResponse.ErrorMessage);
+            }
+            
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void newChat_Click(object sender, EventArgs e)
+        {
+            string name = Microsoft.VisualBasic.Interaction.InputBox("Name",
+                       "New chat",
+                       "Default",
+                       0,
+                       0);
+            string users = Microsoft.VisualBasic.Interaction.InputBox("Users",
+                       "New chat",
+                       "Default",
+                       0,
+                       0);
+
+            Dictionary<string, object> newChatData = new Dictionary<string, object>();
+            newChatData.Add("action", "create-chat");
+            newChatData.Add("name", name);
+            newChatData.Add("recipients", users.Split(' '));
+
+            Request newChatRequest = new Request(Request.RequestType.NewChat, newChatData);
+            Response newChatResponse = Client.SendRequest(newChatRequest);
+
+            if (newChatResponse.Error != true)
+            {
+                MessageBox.Show("New chat created");
+                GetMessages();
+            }
+            else
+            {
+                MessageBox.Show(newChatResponse.ErrorMessage);   
+            }
+        }
+
+        private void Chat_Click(object sender, EventArgs e)
+        {
+            string chatId = Microsoft.VisualBasic.Interaction.InputBox("Chat id",
+                       "Open chat",
+                       "Default",
+                       0,
+                       0);
+            Chat frm1 = new Chat(Client, chatId);
             frm1.ShowDialog();
         }
+
     }
 }

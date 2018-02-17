@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -12,18 +11,19 @@ namespace Communicator.Model.Client
     public class Request
     {
         //TODO: Rozszerzyc RequestType w trakcie powstawania funkcjonalności
-        public enum RequestType { Login, Register, SendMessage, GetMessage }
+        public enum RequestType { Login, Register, Logout, SendMessage, GetMessages, NewChat, GetChats, GetChat, HasNewMessage, GetNewMessage }
 
-        public RequestType Type { get; private set; }
-        public Dictionary<string, object> Data { get; private set; }
+        public RequestType Code { get; private set; }
+        //public Dictionary<string, object> Data { get; private set; }
+        public Dictionary<string, object> Data { private set; get; } = new Dictionary<string, object>();
 
         public Request(RequestType type, Dictionary<string, object> data)
         {
-            Type = type;
+            Code = type;
             Data = data;
         }
 
-        public string RequestString
+        /*public string RequestString
         {
             get
             {
@@ -31,14 +31,22 @@ namespace Communicator.Model.Client
                 //ISITDONE? 
                 string requestString = "";
 
-                JToken serializeData = JsonConvert.SerializeObject(Type);
-                JToken serializeRequest = JsonConvert.SerializeObject(this);
-                requestString = (string)serializeRequest;
+                //JToken serializeData = JsonConvert.Serialize(Type);
+                //JToken serializeRequest = JsonConvert.SerializeObject(this);
+                // requestString = (string)serializeRequest;
+                requestString = @"{
+                     action: login,
+                     login: admin,
+                     password: admin
+                     }
+
+                 }";
+                requestString = JsonConvert.SerializeObject(this);
 
                 return requestString;
             }
 
             //TODO: BRAK MOŻLIWOŚCI URUCHOMIENIA SETA (READONLY)
-        }
+        }*/
     }
 }
