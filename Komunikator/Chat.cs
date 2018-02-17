@@ -60,7 +60,7 @@ namespace Komunikator
             Dictionary<string, object> getMessageData = new Dictionary<string, object>();
             getMessageData.Add("action", "get-messages");
             getMessageData.Add("chatId", ChatId);
-            getMessageData.Add("lastKnownMessageId", "1029");
+            getMessageData.Add("lastKnownMessageId", 1034);
 
             Request getMessRequest = new Request(Request.RequestType.GetNewMessage, getMessageData);
             Response getMessResponse = Client.SendRequest(getMessRequest);
@@ -69,7 +69,6 @@ namespace Komunikator
             {
                 object data = getMessResponse.Data["Data"];
                 textBox2.Text = textBox2.Text + getMessResponse.Data.First();
-                //textBox2.Text = textBox2.Text data;
             }
             else
             {

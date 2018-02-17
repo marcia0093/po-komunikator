@@ -111,6 +111,5 @@ namespace Communicator
             Chat frm1 = new Chat(Client, chatId);
             frm1.ShowDialog();
         }
-
     }
 }

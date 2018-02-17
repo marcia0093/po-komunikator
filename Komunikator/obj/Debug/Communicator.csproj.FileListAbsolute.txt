@@ -13,3 +13,4 @@ D:\DEV_C#\Komunikator\Komunikator\obj\Debug\Communicator.Register.resources
 D:\DEV_C#\Komunikator\Komunikator\bin\Debug\Newtonsoft.Json.dll
 D:\DEV_C#\Komunikator\Komunikator\bin\Debug\Newtonsoft.Json.xml
 D:\DEV_C#\Komunikator\Komunikator\obj\Debug\Komunikator.Chat.resources
+D:\DEV_C#\Komunikator\Komunikator\obj\Debug\Communicator.csprojResolveAssemblyReference.cache

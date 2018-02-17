@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.Chat = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.newChat = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.Chat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -59,12 +59,23 @@
             this.splitContainer1.SplitterDistance = 836;
             this.splitContainer1.TabIndex = 0;
             // 
+            // Chat
+            // 
+            this.Chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F);
+            this.Chat.Location = new System.Drawing.Point(12, 116);
+            this.Chat.Name = "Chat";
+            this.Chat.Size = new System.Drawing.Size(372, 99);
+            this.Chat.TabIndex = 3;
+            this.Chat.Text = "Open chat";
+            this.Chat.UseVisualStyleBackColor = true;
+            this.Chat.Click += new System.EventHandler(this.Chat_Click);
+            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(389, 15);
+            this.button4.Location = new System.Drawing.Point(12, 15);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(428, 95);
+            this.button4.Size = new System.Drawing.Size(372, 95);
             this.button4.TabIndex = 3;
             this.button4.Text = "Logout";
             this.button4.UseVisualStyleBackColor = true;
@@ -73,7 +84,7 @@
             // newChat
             // 
             this.newChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.newChat.Location = new System.Drawing.Point(12, 15);
+            this.newChat.Location = new System.Drawing.Point(12, 221);
             this.newChat.Name = "newChat";
             this.newChat.Size = new System.Drawing.Size(372, 95);
             this.newChat.TabIndex = 0;
@@ -83,23 +94,13 @@
             // 
             // textBox2
             // 
-            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(12, 47);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(1300, 600);
             this.textBox2.TabIndex = 2;
-            // 
-            // Chat
-            // 
-            this.Chat.Location = new System.Drawing.Point(12, 116);
-            this.Chat.Name = "Chat";
-            this.Chat.Size = new System.Drawing.Size(372, 99);
-            this.Chat.TabIndex = 3;
-            this.Chat.Text = "Open chat";
-            this.Chat.UseVisualStyleBackColor = true;
-            this.Chat.Click += new System.EventHandler(this.Chat_Click);
             // 
             // MainApplication
             // 
